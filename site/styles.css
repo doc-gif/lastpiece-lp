@@ -172,7 +172,7 @@ h3 { font-size: 1.125rem; color: var(--deep); line-height: 1.5; font-weight: 900
 .board li > span:nth-child(2) { display: flex; flex-direction: column; line-height: 1.35; flex: 1 1 auto; min-width: 0; }
 .board b { color: var(--wine); }
 .board small { color: var(--sub); font-size: 0.75rem; font-weight: 700; }
-.board .thumb { width: 2.75rem; height: 2.75rem; border-radius: 12px; background: #fff; padding: 0.15rem; border: 2px solid #fff; box-shadow: 0 2px 0 var(--line); }
+.board .thumb { width: 2.9rem; height: 2.9rem; object-fit: cover; border-radius: 12px; background: #fff; border: 2px solid #fff; box-shadow: 0 2px 0 var(--line); }
 .board .glow-featured { border-color: transparent; background: linear-gradient(#FFF9FA, #FFF9FA) padding-box, var(--rg) border-box; box-shadow: 0 0 12px rgba(237, 179, 163, 0.6); }
 .board .glow-sparkle { border-color: transparent; background: linear-gradient(#FFF9FA, #FFF9FA) padding-box, var(--pearl) border-box; }
 .avatar { width: 2rem; height: 2rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.875rem; color: var(--wine); background: #EAD5DC; flex: 0 0 auto; box-shadow: 0 0 0 2px #fff; }
@@ -193,10 +193,10 @@ h3 { font-size: 1.125rem; color: var(--deep); line-height: 1.5; font-weight: 900
 .pipi-bubble { order: -1; font-weight: 900; font-size: 0.875rem; color: var(--deep); background: #fff; border: 2.5px solid var(--pink); border-radius: 18px 18px 4px 18px; padding: 0.35rem 0.8rem; line-height: 1.45; box-shadow: 0 3px 0 var(--line); margin-bottom: 1.2rem; }
 @keyframes hop { 0%, 70%, 100% { transform: translateY(0); } 80% { transform: translateY(-8px) rotate(-5deg); } 90% { transform: translateY(0) rotate(0); } }
 
-.float { position: absolute; z-index: 2; filter: drop-shadow(0 6px 10px rgba(185, 74, 117, 0.2)); animation: bob 5s ease-in-out infinite; }
-.float-1 { left: -3.25rem; top: -1.25rem; width: 5.5rem; transform: rotate(-8deg); }
-.float-2 { right: -3.5rem; top: 38%; width: 4.5rem; animation-delay: -1.5s; }
-.float-3 { left: -2.5rem; bottom: 1.5rem; width: 4rem; animation-delay: -3s; }
+.float { position: absolute; z-index: 2; object-fit: cover; border-radius: 18px; border: 4px solid #fff; box-shadow: 0 4px 0 var(--line), 0 10px 20px rgba(185, 74, 117, 0.2); animation: bob 5s ease-in-out infinite; }
+.float-1 { left: -3.75rem; top: -1.5rem; width: 6rem; height: 6rem; transform: rotate(-8deg); }
+.float-2 { right: -3.75rem; top: 36%; width: 5rem; height: 5rem; animation-delay: -1.5s; }
+.float-3 { left: -3rem; bottom: 1.5rem; width: 4.5rem; height: 4.5rem; animation-delay: -3s; }
 @keyframes bob { 50% { transform: translateY(-8px) rotate(4deg); } }
 @media (max-width: 71.99rem) { .float { display: none; } }
 @media (max-width: 55.99rem) { .sticker-sheet { padding-bottom: 3.75rem; } }
@@ -214,6 +214,16 @@ h3 { font-size: 1.125rem; color: var(--deep); line-height: 1.5; font-weight: 900
 .c-lavender { --chip: var(--lavender); --bullet: #7E5FC2; }
 .c-mint { --chip: var(--mint); --bullet: #2F8F6A; }
 .c-lemon { --chip: var(--lemon); --bullet: #B98A12; }
+
+/* 限定グッズの写真ストリップ（ステッカー風） */
+.photo-strip-wrap { margin-top: 2rem; display: grid; gap: 0.9rem; }
+.strip-title { display: flex; align-items: center; justify-content: center; gap: 0.4rem; text-align: center; font-weight: 900; color: var(--deep); font-size: 1.0625rem; letter-spacing: 0.08em; }
+.photo-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+.photo-strip li { display: grid; gap: 0.35rem; background: var(--surface); border: 4px solid #fff; border-radius: 20px; padding: 0.5rem 0.5rem 0.6rem; box-shadow: 0 4px 0 var(--line), 0 10px 22px rgba(185, 74, 117, 0.1); text-align: center; transform: rotate(-1deg); }
+.photo-strip li:nth-child(even) { transform: rotate(1.2deg); }
+.photo-strip img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; background: #fff; }
+.photo-strip span { font-size: 0.8125rem; font-weight: 900; color: var(--wine); line-height: 1.4; }
+@media (min-width: 40rem) { .photo-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 /* ===== どんなサービス：3 ステップと体験の中心 ===== */
 .steps { display: grid; gap: 1rem; }
