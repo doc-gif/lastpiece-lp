@@ -2,7 +2,7 @@
 import { AxeBuilder } from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
-const banned = ['換金', '必ず当たる', '還元率100', '還元率 100', '大当たり', '中当たり', 'JTCC', 'トレカセンター']
+const banned = ['提案モック', '換金', '必ず当たる', '還元率100', '還元率 100', '大当たり', '中当たり', 'JTCC', 'トレカセンター']
 
 test('LP: 見出し・アクセシビリティ・操作領域・320px・文字200%・動きを減らす設定', async ({ page }, testInfo) => {
   const errors: string[] = []
@@ -12,7 +12,7 @@ test('LP: 見出し・アクセシビリティ・操作領域・320px・文字20
   await page.goto('./')
   await expect(page).toHaveTitle(/ラストピース/)
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-  await expect(page.getByText('提案モック・公式サービスではありません', { exact: false }).first()).toBeVisible()
+  await expect(page.getByText('公式サービスではありません', { exact: false }).first()).toBeVisible()
   const text = await page.locator('body').innerText()
   const html = await page.content()
   for (const word of banned) expect(text.includes(word) || html.includes(word), `禁止語「${word}」`).toBe(false)
