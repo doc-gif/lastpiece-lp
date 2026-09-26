@@ -1,0 +1,17 @@
+{
+  "name": "jtcc-lastpiece-lp",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "test": "playwright test",
+    "qr": "node scripts/qr.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "qrcode": "1.5.4"
+  }
+}
