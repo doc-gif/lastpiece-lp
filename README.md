@@ -21,6 +21,10 @@ pnpm serve        # http://127.0.0.1:4180/lastpiece-lp/
 pnpm test
 ```
 
+## タスクと並行作業
+
+作業は GitHub Issue を指示書にして進める。親 Issue の割り当て表で「誰が・どのファイルを・どの状態で」担当しているかが見える。ルールは [docs/AGENT_TASKS.md](docs/AGENT_TASKS.md)。現在の親 Issue: [#1 LP 流入メトリクス](https://github.com/doc-gif/lastpiece-lp/issues/1)（サブタスク #2〜#6 は並行可）。
+
 ## 変更するときのきまり
 
 - 画像は原則 `site/assets/` のオリジナル素材を使う。作品名は取り扱い商品の事実として文字だけで書く。
