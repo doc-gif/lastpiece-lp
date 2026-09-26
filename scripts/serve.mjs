@@ -1,10 +1,10 @@
-// site/ をそのまま配信する小さなサーバー（テストとローカル確認用）。GitHub Pages と同じパス /jtcc-lastpiece-lp/ で配信する。
+// site/ をそのまま配信する小さなサーバー（テストとローカル確認用）。GitHub Pages と同じパス /lastpiece-lp/ で配信する。
 import { createServer } from 'node:http'
 import { readFile, stat } from 'node:fs/promises'
 import { extname, join, resolve, sep } from 'node:path'
 
 const root = resolve('site')
-const prefix = '/jtcc-lastpiece-lp/'
+const prefix = '/lastpiece-lp/'
 const port = Number(process.env.PORT ?? 4180)
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.png': 'image/png', '.svg': 'image/svg+xml', '.json': 'application/json', '.txt': 'text/plain; charset=utf-8' }
 

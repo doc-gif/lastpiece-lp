@@ -8,13 +8,13 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: 'http://127.0.0.1:4180/jtcc-lastpiece-lp/',
+    baseURL: 'http://127.0.0.1:4180/lastpiece-lp/',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
   webServer: {
     command: 'node scripts/serve.mjs',
-    url: 'http://127.0.0.1:4180/jtcc-lastpiece-lp/',
+    url: 'http://127.0.0.1:4180/lastpiece-lp/',
     reuseExistingServer: !process.env.CI,
   },
   projects: [

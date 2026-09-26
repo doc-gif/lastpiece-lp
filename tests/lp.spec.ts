@@ -2,7 +2,7 @@
 import { AxeBuilder } from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
-const banned = ['換金', '必ず当たる', '還元率100', '還元率 100', '大当たり', '中当たり']
+const banned = ['換金', '必ず当たる', '還元率100', '還元率 100', '大当たり', '中当たり', 'JTCC', 'トレカセンター']
 
 test('LP: 見出し・アクセシビリティ・操作領域・320px・文字200%・動きを減らす設定', async ({ page }, testInfo) => {
   const errors: string[] = []
@@ -14,7 +14,8 @@ test('LP: 見出し・アクセシビリティ・操作領域・320px・文字20
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   await expect(page.getByText('提案モック・公式サービスではありません', { exact: false }).first()).toBeVisible()
   const text = await page.locator('body').innerText()
-  for (const word of banned) expect(text.includes(word), `禁止語「${word}」`).toBe(false)
+  const html = await page.content()
+  for (const word of banned) expect(text.includes(word) || html.includes(word), `禁止語「${word}」`).toBe(false)
 
   expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([])
 
@@ -44,10 +45,7 @@ test('LP: 見出し・アクセシビリティ・操作領域・320px・文字20
   expect(moving, 'HIG-05: no continuous motion in reduced-motion mode').toBe(0)
   expect(await page.locator('audio[autoplay], video[autoplay]:not([muted])').count()).toBe(0)
 
-  // FAQ は開閉でき、デモへのリンクは本番アプリを指す
-  const faq = page.locator('details').first()
-  await faq.locator('summary').click()
-  await expect(faq).toHaveAttribute('open', '')
+  // デモへのリンクは本番アプリを指す
   const demoLinks = page.getByRole('link', { name: /デモを試す/ })
   expect(await demoLinks.count()).toBeGreaterThanOrEqual(2)
   for (const link of await demoLinks.all()) expect(await link.getAttribute('href')).toBe('https://doc-gif.github.io/jtcc-group-e/')

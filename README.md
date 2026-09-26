@@ -1,8 +1,8 @@
 # ラストピース LP
 
-スマートフォン向け Web アプリ「ラストピース」（提案モック）のランディングページです。即完売で買えなかった限定グッズを JTCC が買い取り・検品し、確率を公開したガチャとして届け、友達といっしょに回す、というサービス提案を 1 ページで紹介します。**提案モック・公式サービスではありません。**
+スマートフォン向け Web アプリ「ラストピース」（提案モック）のランディングページです。軸は「誰に＝サンリオ好きのオタク」「何を＝ふたり以上そろわないと回せない限定グッズガチャ」。ヒーロー → 誰に → どんなサービス（3 ステップ＋体験の中心）→ CTA の構成で、見た目はパステル・ステッカー風（丸ゴシック、白フチ、ハート・星の飾り）です。**LP 上では運営企業名を出しません**（利用者の指示）。**提案モック・公式サービスではありません。**
 
-- 公開 URL: https://doc-gif.github.io/jtcc-lastpiece-lp/
+- 公開 URL: https://doc-gif.github.io/lastpiece-lp/
 - 動くモック（デモ）: https://doc-gif.github.io/jtcc-group-e/ （[アプリのリポジトリ](https://github.com/doc-gif/jtcc-group-e)）
 - 配色・文言・きまりの根拠: アプリ側の [`docs/PRODUCT.md`](https://github.com/doc-gif/jtcc-group-e/blob/main/docs/PRODUCT.md) と配色「さくらミルク」（`src/index.css`）。デザインの管理先は同じ [Figma ファイル](https://www.figma.com/design/yeDF1BwhrxpXI57Daainle?node-id=267-8198)（ピンク基調のデザインマスター）。
 
@@ -17,7 +17,7 @@
 ```bash
 pnpm install
 pnpm exec playwright install chromium
-pnpm serve        # http://127.0.0.1:4180/jtcc-lastpiece-lp/
+pnpm serve        # http://127.0.0.1:4180/lastpiece-lp/
 pnpm test
 ```
 
@@ -31,5 +31,5 @@ pnpm test
 ## QR コード
 
 ```bash
-pnpm qr https://doc-gif.github.io/jtcc-lastpiece-lp/ qr.png
+pnpm qr https://doc-gif.github.io/lastpiece-lp/ qr.png
 ```
