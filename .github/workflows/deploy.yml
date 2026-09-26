@@ -29,6 +29,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test
+      - name: Cache-bust the stylesheet with the commit SHA
+        run: sed -i "s#\./styles.css\"#./styles.css?v=${GITHUB_SHA::8}\"#" site/index.html && grep -c "styles.css?v=" site/index.html
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

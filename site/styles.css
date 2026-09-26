@@ -193,12 +193,13 @@ h3 { font-size: 1.125rem; color: var(--deep); line-height: 1.5; font-weight: 900
 .pipi-bubble { order: -1; font-weight: 900; font-size: 0.875rem; color: var(--deep); background: #fff; border: 2.5px solid var(--pink); border-radius: 18px 18px 4px 18px; padding: 0.35rem 0.8rem; line-height: 1.45; box-shadow: 0 3px 0 var(--line); margin-bottom: 1.2rem; }
 @keyframes hop { 0%, 70%, 100% { transform: translateY(0); } 80% { transform: translateY(-8px) rotate(-5deg); } 90% { transform: translateY(0) rotate(0); } }
 
-.float { position: absolute; z-index: 0; filter: drop-shadow(0 6px 10px rgba(185, 74, 117, 0.2)); animation: bob 5s ease-in-out infinite; }
-.float-1 { left: -2rem; top: -1.5rem; width: 5.5rem; transform: rotate(-8deg); }
-.float-2 { right: -1.5rem; top: 34%; width: 4.5rem; animation-delay: -1.5s; }
-.float-3 { left: 0.5rem; bottom: 0.25rem; width: 4rem; animation-delay: -3s; }
+.float { position: absolute; z-index: 2; filter: drop-shadow(0 6px 10px rgba(185, 74, 117, 0.2)); animation: bob 5s ease-in-out infinite; }
+.float-1 { left: -3.25rem; top: -1.25rem; width: 5.5rem; transform: rotate(-8deg); }
+.float-2 { right: -3.5rem; top: 38%; width: 4.5rem; animation-delay: -1.5s; }
+.float-3 { left: -2.5rem; bottom: 1.5rem; width: 4rem; animation-delay: -3s; }
 @keyframes bob { 50% { transform: translateY(-8px) rotate(4deg); } }
-@media (max-width: 55.99rem) { .float-1, .float-2 { display: none; } .sticker-sheet { padding-bottom: 3.75rem; } }
+@media (max-width: 71.99rem) { .float { display: none; } }
+@media (max-width: 55.99rem) { .sticker-sheet { padding-bottom: 3.75rem; } }
 
 .mock-notice { font-size: 0.8125rem; color: var(--sub); background: rgba(255, 255, 255, 0.85); border: 2.5px dashed var(--line); border-radius: 18px; padding: 0.8rem 1rem; line-height: 1.7; }
 .mock-notice.container { width: min(100% - 2rem, 68rem); margin-bottom: 1rem; }
