@@ -65,12 +65,12 @@ b { font-weight: 900; }
 .container { width: min(100%, 68rem); margin: 0 auto; padding-inline: max(1rem, env(safe-area-inset-left, 0px)) max(1rem, env(safe-area-inset-right, 0px)); }
 .container.narrow { max-width: 44rem; }
 .center { text-align: center; }
-.section { padding: 3.5rem 0; }
+.section { padding: 3.5rem 0; overflow-x: clip; }
 .section-soft { background: rgba(255, 255, 255, 0.55); border-top: 3px dotted var(--line); border-bottom: 3px dotted var(--line); }
 .sp { display: inline; }
 @media (min-width: 40rem) { .sp { display: none; } }
 .eyebrow { margin-bottom: 0.75rem; }
-.ribbon-tag {
+.ribbon-tag { max-width: 100%; overflow-wrap: anywhere;
   display: inline-block; position: relative; font-size: 0.875rem; font-weight: 900; letter-spacing: 0.16em; color: var(--wine);
   background: var(--lemon); border: 2px solid #fff; border-radius: 999px; padding: 0.15rem 1.1rem; box-shadow: 0 3px 0 #F3D9A0; transform: rotate(-2deg);
 }
