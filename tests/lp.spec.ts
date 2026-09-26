@@ -2,7 +2,7 @@
 import { AxeBuilder } from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
-const banned = ['提案モック', '換金', '必ず当たる', '還元率100', '還元率 100', '大当たり', '中当たり', 'JTCC', 'トレカセンター']
+const banned = ['提案モック', 'オタク', '換金', '必ず当たる', '還元率100', '還元率 100', '大当たり', '中当たり', 'JTCC', 'トレカセンター']
 
 test('LP: 見出し・アクセシビリティ・操作領域・320px・文字200%・動きを減らす設定', async ({ page }, testInfo) => {
   const errors: string[] = []
